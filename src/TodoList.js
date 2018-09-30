@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { todos as initialTodoList } from "./seedData";
 import { hashCode } from "./util";
 import ToDoItem from "./TodoItem";
 import TodoCreationBar from "./TodoCreationBar";
 
 export default class TodoList extends Component {
+
   state = {
-    todos: initialTodoList
+    todos: this.props.initialTodoList
   };
 
   toggleTaskState = (item, event) => {

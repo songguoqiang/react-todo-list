@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import TodoList from "./TodoList"
+import TodoList from "./TodoList";
+import { todos as initialTodoList } from "./seedData";
 
 class App extends Component {
   render() {
-    return (
-      <TodoList/>
-    );
+    return <TodoList initialTodoList={initialTodoList} />;
   }
 }
 
