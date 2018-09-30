@@ -1,0 +1,8 @@
+.todo-item {
+  display: inline-block;
+  width: 400px;
+}
+
+.done {
+  text-decoration: line-through;
+}
