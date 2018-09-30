@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { hashCode } from "./util";
-import ToDoItem from "./TodoItem";
+import ToDoItem from "./components/TodoItem/TodoItem";
 import TodoCreationBar from "./TodoCreationBar";
 
 export default class TodoList extends Component {
