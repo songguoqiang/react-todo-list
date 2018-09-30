@@ -10,13 +10,13 @@ test('should render with a search field and two buttons', () => {
 
   const {getByLabelText, getByText} = render(<TodoFilterBar {...props} />);
 
-  expect(getByLabelText("Task Filter")).toBeInTheDOM();
+  expect(getByLabelText("Task Filter")).toBeInTheDocument();
 
   const setFilterButton = getByText("Filter Tasks")
-  expect(setFilterButton).toBeInTheDOM();
+  expect(setFilterButton).toBeInTheDocument();
 
   const clearFilterButton = getByText("Clear Filter")
-  expect(clearFilterButton).toBeInTheDOM();
+  expect(clearFilterButton).toBeInTheDocument();
 })
 
 test('should invoke callback when users click filter tasks button', () => {

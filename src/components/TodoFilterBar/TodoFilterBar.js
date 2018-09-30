@@ -10,12 +10,14 @@ class TodoFilterBar extends React.Component {
     this.setState({filter: event.target.value});
   }
 
-  filterTasks = () => {
+  filterTasks = (event) => {
     this.props.setFilter(this.state.filter)
+    event.preventDefault();
   }
 
-  clearFilter = () => {
+  clearFilter = (event) => {
     this.props.clearFilter();
+    event.preventDefault();
   }
 
   render() {
