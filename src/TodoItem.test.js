@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { render, fireEvent, getNodeText } from "react-testing-library";
 import React from "react";
 import TodoItem from "./TodoItem";
