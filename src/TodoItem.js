@@ -1,7 +1,8 @@
 import React from "react";
 import "./TodoItem.css";
+import PropTypes from 'prop-types'; 
 
-export default ({ name, isCompleted, toggleTaskStatus }) => {
+const TodoItem = ({ name, isCompleted, toggleTaskStatus }) => {
   let className = "todo-item ";
   let buttonText = "Done";
 
@@ -17,3 +18,11 @@ export default ({ name, isCompleted, toggleTaskStatus }) => {
     </li>
   );
 };
+
+TodoItem.propTypes = {
+    name: PropTypes.string.isRequired,
+    isCompleted: PropTypes.bool.isRequired,
+    toogleTaskStatus: PropTypes.func.isRequired
+  };
+
+  export default TodoItem;
