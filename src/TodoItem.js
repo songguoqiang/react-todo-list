@@ -22,7 +22,7 @@ const TodoItem = ({ name, isCompleted, toggleTaskStatus }) => {
 TodoItem.propTypes = {
     name: PropTypes.string.isRequired,
     isCompleted: PropTypes.bool.isRequired,
-    toogleTaskStatus: PropTypes.func.isRequired
+    toggleTaskStatus: PropTypes.func.isRequired
   };
 
   export default TodoItem;
