@@ -26,9 +26,9 @@ export default class TodoCreationBar extends Component {
   render() {
     return (
       <form id="new-todo-form">
-        <label htmlFor="new-todo-name">New Tasks</label>
+        <label htmlFor="new-todo-name">New Task</label>
         <input id="new-todo-name" type="text" value={this.state.newTaskName} onChange={this.setNewTaskName}/>
-        <input type="submit" value="Add" onClick={this.addNewTaskToList} />
+        <button onClick={this.addNewTaskToList}>Add</button>
       </form>
     );
   }
