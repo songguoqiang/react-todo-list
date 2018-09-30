@@ -1,0 +1,12 @@
+#new-todo-form {
+  margin: 10px auto;
+}
+
+#new-todo-name {
+  width: 300px;
+  margin: 10px;
+}
+
+#new-todo-form input {
+  margin: 10px;
+}

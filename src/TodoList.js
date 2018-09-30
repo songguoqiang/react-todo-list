@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { todos as initialTodoList } from "./seedData";
 import { hashCode } from "./util";
 import ToDoItem from "./TodoItem";
+import TodoCreationBar from "./TodoCreationBar";
 
 export default class TodoList extends Component {
   state = {
@@ -13,10 +14,16 @@ export default class TodoList extends Component {
     this.setState({ todos: this.state.todos });
   };
 
+  addNewTask = taskName => {
+    this.state.todos.push({ name: taskName, isCompleted: false });
+    this.setState({ todos: this.state.todos });
+  };
+
   render() {
     return (
       <div>
         <div>My To Do List</div>
+        <TodoCreationBar addNewTask={this.addNewTask} />
         <ul>
           {this.state.todos.map(item => {
             return (
