@@ -80,3 +80,29 @@ test("should be able to add new tasks to the list", () => {
 
   expect(currentTasks).toHaveLength(1);
 });
+
+test('should be able to filter tasks and clear filters', () => {
+  const props = {
+    initialTodoList: [
+      { name: "chicken", isCompleted: true },
+      { name: "dog", isCompleted: false }
+    ]
+  };
+  const { container, getByLabelText, getByText } = render(<TodoList {...props} />);
+
+  const filterField = getByLabelText("Task Filter");
+  fireEvent.change(filterField, {target: {value: "chicken"}});
+
+  const setFilterButton = getByText("Filter Tasks")
+  fireEvent.click(setFilterButton);
+
+  let listElements= container.querySelectorAll("ul li");
+  expect(listElements).toHaveLength(1);
+
+  const clearFilterButton = getByText("Clear Filter")
+  fireEvent.click(clearFilterButton);
+
+  listElements= container.querySelectorAll("ul li");
+  expect(listElements).toHaveLength(2);
+
+})
