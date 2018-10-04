@@ -43,7 +43,7 @@ test("should be able to mark a task as done", () => {
   expect(getNodeText(taskActionButton)).toEqual("Undo");
 });
 
-test("should be able to mark a task as todo", () => {
+test("should be able to undo a task", () => {
   const props = {
     initialTodoList: [{ name: "task1", isCompleted: true }]
   };
