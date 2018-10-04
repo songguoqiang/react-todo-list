@@ -70,13 +70,15 @@ test("should be able to add new tasks to the list", () => {
 
   const todoCreationBar = container.querySelector("#new-todo-form");
 
-  fireEvent.change(within(todoCreationBar).getByLabelText("New Task"), {
+  const newTaskInputField = within(todoCreationBar).getByLabelText("New Task");
+  fireEvent.change(newTaskInputField, {
     target: { value: "task1" }
   });
 
-  fireEvent.click(within(todoCreationBar).getByText("Add"));
+  const addTaskButton = within(todoCreationBar).getByText("Add");
+  fireEvent.click(addTaskButton);
 
-  const currentTasks = container.querySelectorAll("ul li");
+  const currentTasks = container.querySelectorAll(".todo-item");
 
   expect(currentTasks).toHaveLength(1);
 });
@@ -96,13 +98,13 @@ test('should be able to filter tasks and clear filters', () => {
   const setFilterButton = getByText("Filter Tasks")
   fireEvent.click(setFilterButton);
 
-  let listElements= container.querySelectorAll("ul li");
+  let listElements= container.querySelectorAll(".todo-item");
   expect(listElements).toHaveLength(1);
 
   const clearFilterButton = getByText("Clear Filter")
   fireEvent.click(clearFilterButton);
 
-  listElements= container.querySelectorAll("ul li");
+  listElements= container.querySelectorAll(".todo-item");
   expect(listElements).toHaveLength(2);
 
 })
