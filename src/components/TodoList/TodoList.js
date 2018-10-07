@@ -16,8 +16,8 @@ export default class TodoList extends Component {
   };
 
   addNewTask = taskName => {
-    this.state.todos.push({ name: taskName, isCompleted: false });
-    this.setState({ todos: this.state.todos });
+    const newTask = { name: taskName, isCompleted: false };
+    this.setState({ todos: [...this.state.todos, newTask] });
   };
 
   setFilter = filter => {
